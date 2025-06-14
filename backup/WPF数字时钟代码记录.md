@@ -1,5 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://DARKMAN0216.github.io/wuyin</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://DARKMAN0216.github.io/wuyin</link></image><lastBuildDate>Sat, 14 Jun 2025 08:21:24 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>WPF数字时钟代码记录</title><link>https://DARKMAN0216.github.io/wuyin/post/WPF-shu-zi-shi-zhong-dai-ma-ji-lu.html</link><description>**ViewBox**
+**ViewBox**
 public class DigitalClockViewClock : BaseViewModel, IDisposable
 {
     private DispatcherTimer _timer;
@@ -9,14 +8,14 @@ public class DigitalClockViewClock : BaseViewModel, IDisposable
     // 暴露给 View 绑定的属性
     public string CurrentDateTimeString
     {
-        get =&gt; _currentDateTimeString;
-        set =&gt; Set(ref _currentDateTimeString, value);
+        get => _currentDateTimeString;
+        set => Set(ref _currentDateTimeString, value);
     }
 
     public string CurrentDayOfWeekString
     {
-        get =&gt; _currentDayOfWeekString;
-        set =&gt; Set(ref _currentDayOfWeekString, value);
+        get => _currentDayOfWeekString;
+        set => Set(ref _currentDayOfWeekString, value);
     }
 
     public DigitalClockViewClock()
@@ -44,10 +43,10 @@ public class DigitalClockViewClock : BaseViewModel, IDisposable
         DateTime now = DateTime.Now;
 
         // 更新日期和时间 (格式: YYYY-MM-DD HH:mm)
-        CurrentDateTimeString = now.ToString('yyyy-MM-dd HH:mm');
+        CurrentDateTimeString = now.ToString("yyyy-MM-dd HH:mm");
 
         // 更新星期几 (格式: 星期一, 星期二, ...)
-        CurrentDayOfWeekString = now.ToString('dddd');
+        CurrentDayOfWeekString = now.ToString("dddd");
     }
 
     // 实现 IDisposable 接口，用于清理资源（停止定时器）
@@ -105,7 +104,7 @@ public partial class MainWindowView: Window
     }
 }
 **HGDigitalTwinWindow.xaml**
-&lt;StackPanel Grid.Column='2' Margin='0,0,10,0' Orientation='Horizontal'&gt;
-    &lt;TextBlock Text='{Binding CurrentDateTimeString}' Foreground='#D4F4F1' FontSize='25'/&gt;
-    &lt;TextBlock Text='{Binding CurrentDayOfWeekString}' Foreground='#D4F4F1' HorizontalAlignment='Right' FontSize='25' Margin='10,0'/&gt;
-&lt;/StackPanel&gt;。</description><guid isPermaLink="true">https://DARKMAN0216.github.io/wuyin/post/WPF-shu-zi-shi-zhong-dai-ma-ji-lu.html</guid><pubDate>Sat, 14 Jun 2025 08:20:57 +0000</pubDate></item></channel></rss>
+<StackPanel Grid.Column="2" Margin="0,0,10,0" Orientation="Horizontal">
+    <TextBlock Text="{Binding CurrentDateTimeString}" Foreground="#D4F4F1" FontSize="25"/>
+    <TextBlock Text="{Binding CurrentDayOfWeekString}" Foreground="#D4F4F1" HorizontalAlignment="Right" FontSize="25" Margin="10,0"/>
+</StackPanel>
