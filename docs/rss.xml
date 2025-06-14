@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://DARKMAN0216.github.io/wuyin</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://DARKMAN0216.github.io/wuyin</link></image><lastBuildDate>Sat, 14 Jun 2025 08:29:46 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>WPF数字时钟代码记录</title><link>https://DARKMAN0216.github.io/wuyin/post/WPF-shu-zi-shi-zhong-dai-ma-ji-lu.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://DARKMAN0216.github.io/wuyin</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://DARKMAN0216.github.io/wuyin</link></image><lastBuildDate>Sat, 14 Jun 2025 08:30:25 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>WPF数字时钟代码记录</title><link>https://DARKMAN0216.github.io/wuyin/post/WPF-shu-zi-shi-zhong-dai-ma-ji-lu.html</link><description>
 **ViewBox**
-定时器逻辑类
+数字时钟逻辑类
 
     public class DigitalClockViewClock : BaseViewModel, IDisposable
     {
@@ -77,7 +77,7 @@
     }
 
 **MainWindowView.xaml.cs**
-定时器展示及回收
+数字时钟展示及回收
 
     public partial class MainWindowView: Window
     {

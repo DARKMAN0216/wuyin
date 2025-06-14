@@ -1,6 +1,6 @@
 
 **ViewBox**
-定时器逻辑类
+数字时钟逻辑类
 
     public class DigitalClockViewClock : BaseViewModel, IDisposable
     {
@@ -76,7 +76,7 @@
     }
 
 **MainWindowView.xaml.cs**
-定时器展示及回收
+数字时钟展示及回收
 
     public partial class MainWindowView: Window
     {
