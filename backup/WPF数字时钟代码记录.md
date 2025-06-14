@@ -1,33 +1,31 @@
+
 **ViewBox**
-public class DigitalClockViewClock : BaseViewModel, IDisposable
-{
+定时器逻辑类
+
+    public class DigitalClockViewClock : BaseViewModel, IDisposable
+    {
     private DispatcherTimer _timer;
     private string _currentDateTimeString;
     private string _currentDayOfWeekString;
-
     // 暴露给 View 绑定的属性
     public string CurrentDateTimeString
     {
         get => _currentDateTimeString;
         set => Set(ref _currentDateTimeString, value);
     }
-
     public string CurrentDayOfWeekString
     {
         get => _currentDayOfWeekString;
         set => Set(ref _currentDayOfWeekString, value);
     }
-
     public DigitalClockViewClock()
     {
         // 初始化定时器
         _timer = new DispatcherTimer();
         _timer.Interval = TimeSpan.FromSeconds(1); // 每秒更新一次
-        _timer.Tick += Timer_Tick;
-
+        _timer.Tick += Timer_Tick
         // 立即更新一次显示
         UpdateDateTime();
-
         // 启动定时器
         _timer.Start();
     }
@@ -75,11 +73,13 @@ public class DigitalClockViewClock : BaseViewModel, IDisposable
     {
         Dispose(false);
     }
-}
+    }
 
 **MainWindowView.xaml.cs**
-public partial class MainWindowView: Window
-{
+定时器展示及回收
+
+    public partial class MainWindowView: Window
+    {
     private DigitalClockViewClock _digitalClockViewClock;
     public MainWindowView()
     {
@@ -102,9 +102,12 @@ public partial class MainWindowView: Window
             _digitalClockViewClock = null;
         }
     }
-}
+    }
+
 **HGDigitalTwinWindow.xaml**
-<StackPanel Grid.Column="2" Margin="0,0,10,0" Orientation="Horizontal">
+数字时钟xaml展示
+
+    <StackPanel Grid.Column="2" Margin="0,0,10,0" Orientation="Horizontal">
     <TextBlock Text="{Binding CurrentDateTimeString}" Foreground="#D4F4F1" FontSize="25"/>
     <TextBlock Text="{Binding CurrentDayOfWeekString}" Foreground="#D4F4F1" HorizontalAlignment="Right" FontSize="25" Margin="10,0"/>
-</StackPanel>
+    </StackPanel>

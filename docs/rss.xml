@@ -1,34 +1,32 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://DARKMAN0216.github.io/wuyin</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://DARKMAN0216.github.io/wuyin</link></image><lastBuildDate>Sat, 14 Jun 2025 08:21:24 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>WPF数字时钟代码记录</title><link>https://DARKMAN0216.github.io/wuyin/post/WPF-shu-zi-shi-zhong-dai-ma-ji-lu.html</link><description>**ViewBox**
-public class DigitalClockViewClock : BaseViewModel, IDisposable
-{
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Blog Title</title><link>https://DARKMAN0216.github.io/wuyin</link><description>Blog description</description><copyright>Blog Title</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://DARKMAN0216.github.io/wuyin</link></image><lastBuildDate>Sat, 14 Jun 2025 08:29:46 +0000</lastBuildDate><managingEditor>Blog Title</managingEditor><ttl>60</ttl><webMaster>Blog Title</webMaster><item><title>WPF数字时钟代码记录</title><link>https://DARKMAN0216.github.io/wuyin/post/WPF-shu-zi-shi-zhong-dai-ma-ji-lu.html</link><description>
+**ViewBox**
+定时器逻辑类
+
+    public class DigitalClockViewClock : BaseViewModel, IDisposable
+    {
     private DispatcherTimer _timer;
     private string _currentDateTimeString;
     private string _currentDayOfWeekString;
-
     // 暴露给 View 绑定的属性
     public string CurrentDateTimeString
     {
         get =&gt; _currentDateTimeString;
         set =&gt; Set(ref _currentDateTimeString, value);
     }
-
     public string CurrentDayOfWeekString
     {
         get =&gt; _currentDayOfWeekString;
         set =&gt; Set(ref _currentDayOfWeekString, value);
     }
-
     public DigitalClockViewClock()
     {
         // 初始化定时器
         _timer = new DispatcherTimer();
         _timer.Interval = TimeSpan.FromSeconds(1); // 每秒更新一次
-        _timer.Tick += Timer_Tick;
-
+        _timer.Tick += Timer_Tick
         // 立即更新一次显示
         UpdateDateTime();
-
         // 启动定时器
         _timer.Start();
     }
@@ -76,11 +74,13 @@ public class DigitalClockViewClock : BaseViewModel, IDisposable
     {
         Dispose(false);
     }
-}
+    }
 
 **MainWindowView.xaml.cs**
-public partial class MainWindowView: Window
-{
+定时器展示及回收
+
+    public partial class MainWindowView: Window
+    {
     private DigitalClockViewClock _digitalClockViewClock;
     public MainWindowView()
     {
@@ -103,9 +103,12 @@ public partial class MainWindowView: Window
             _digitalClockViewClock = null;
         }
     }
-}
+    }
+
 **HGDigitalTwinWindow.xaml**
-&lt;StackPanel Grid.Column='2' Margin='0,0,10,0' Orientation='Horizontal'&gt;
+数字时钟xaml展示
+
+    &lt;StackPanel Grid.Column='2' Margin='0,0,10,0' Orientation='Horizontal'&gt;
     &lt;TextBlock Text='{Binding CurrentDateTimeString}' Foreground='#D4F4F1' FontSize='25'/&gt;
     &lt;TextBlock Text='{Binding CurrentDayOfWeekString}' Foreground='#D4F4F1' HorizontalAlignment='Right' FontSize='25' Margin='10,0'/&gt;
-&lt;/StackPanel&gt;。</description><guid isPermaLink="true">https://DARKMAN0216.github.io/wuyin/post/WPF-shu-zi-shi-zhong-dai-ma-ji-lu.html</guid><pubDate>Sat, 14 Jun 2025 08:20:57 +0000</pubDate></item></channel></rss>
+    &lt;/StackPanel&gt;。</description><guid isPermaLink="true">https://DARKMAN0216.github.io/wuyin/post/WPF-shu-zi-shi-zhong-dai-ma-ji-lu.html</guid><pubDate>Sat, 14 Jun 2025 08:20:57 +0000</pubDate></item></channel></rss>
